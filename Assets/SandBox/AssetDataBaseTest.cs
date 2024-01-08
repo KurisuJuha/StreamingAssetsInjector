@@ -7,8 +7,15 @@ namespace SandBox
     {
         private void Start()
         {
-            var request = UnityWebRequest.Get("");
-            UnityWebRequestAsyncOperation
+            var request = UnityWebRequest.Get(Application.streamingAssetsPath + "/SampleTest.txt");
+            Debug.Log(request.url);
+            var operation = request.SendWebRequest();
+            while (!operation.isDone)
+            {
+            }
+
+            Debug.Log(operation.isDone);
+            Debug.Log(operation.webRequest.downloadHandler.text);
         }
     }
 }

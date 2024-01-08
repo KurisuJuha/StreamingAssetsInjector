@@ -17,7 +17,7 @@ namespace StreamingAssetsInjector.Runtime
                 var fileBytes = File.ReadAllBytes(file);
                 var relativeFilePath = file.Remove(0, folderPath.Length + 1);
                 var relativeFilePathBytes = Encoding.UTF8.GetBytes(relativeFilePath);
-                Debug.Log(relativeFilePath);
+                Debug.Log($"{relativeFilePath}, {string.Join(',', fileBytes)}");
                 // ファイルの相対パスのサイズを入れる
                 bytes.AddRange(BitConverter.GetBytes(relativeFilePathBytes.Length));
                 // ファイルの相対パスを入れる

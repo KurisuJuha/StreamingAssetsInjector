@@ -7,6 +7,8 @@ namespace SandBox
     {
         private void Start()
         {
+            if (Application.platform != RuntimePlatform.WebGLPlayer) return;
+
             var data = StreamingAssetsLoader.LoadStreamingAssetsData();
             Debug.Log(data);
             var parsedData = StreamingAssetsUtil.GetData(data);

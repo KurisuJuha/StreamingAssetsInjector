@@ -1,11 +1,12 @@
 {
-    "name": "SandBox",
+    "name": "StreamingAssetsInjector.Editor",
     "rootNamespace": "",
     "references": [
-        "GUID:46575393b6f5b4e9aa8eba4133990f29",
-        ""
+        "GUID:46575393b6f5b4e9aa8eba4133990f29"
     ],
-    "includePlatforms": [],
+    "includePlatforms": [
+        "Editor"
+    ],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
     "overrideReferences": false,

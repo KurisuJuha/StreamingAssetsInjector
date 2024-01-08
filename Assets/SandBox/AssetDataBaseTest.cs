@@ -1,5 +1,5 @@
+using StreamingAssetsInjector.Runtime;
 using UnityEngine;
-using UnityEngine.Networking;
 
 namespace SandBox
 {
@@ -7,15 +7,21 @@ namespace SandBox
     {
         private void Start()
         {
-            var request = UnityWebRequest.Get(Application.streamingAssetsPath + "/SampleTest.txt");
-            Debug.Log(request.url);
-            var operation = request.SendWebRequest();
-            while (!operation.isDone)
-            {
-            }
+            var data = StreamingAssetsLoader.LoadStreamingAssetsData();
+            Debug.Log(data);
+            var parsedData = StreamingAssetsUtil.GetData(data);
 
-            Debug.Log(operation.isDone);
-            Debug.Log(operation.webRequest.downloadHandler.text);
+            foreach (var kvp in parsedData) Debug.Log($"{kvp.Key}, {string.Join(',', kvp.Value)}");
+
+            // var request = UnityWebRequest.Get(Application.streamingAssetsPath + "/SampleTest.txt");
+            // Debug.Log(request.url);
+            // var operation = request.SendWebRequest();
+            // while (!operation.isDone)
+            // {
+            // }
+            //
+            // Debug.Log(operation.isDone);
+            // Debug.Log(operation.webRequest.downloadHandler.text);
         }
     }
 }

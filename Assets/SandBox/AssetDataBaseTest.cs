@@ -4,6 +4,16 @@ using UnityEngine.Networking;
 
 namespace SandBox
 {
+    public class A
+    {
+        public int test;
+    }
+
+    public class B : A
+    {
+        public int test;
+    }
+
     public class AssetDataBaseTest : MonoBehaviour
     {
         private void Start()

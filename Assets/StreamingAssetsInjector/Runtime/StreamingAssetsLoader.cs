@@ -13,7 +13,7 @@ namespace StreamingAssetsInjector.Runtime
         public static UnityWebRequestAsyncOperation GetWebRequestAsyncOperation(UnityWebRequest request)
         {
             Debug.Log("CustomWebRequestAsyncOperation");
-            return null;
+            return new UnityWebRequestAsyncOperation();
         }
 
         public static string GetBase64(string folderPath)

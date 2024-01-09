@@ -14,6 +14,11 @@ namespace SandBox
         public int test;
     }
 
+    public class C
+    {
+        public int test;
+    }
+
     public class AssetDataBaseTest : MonoBehaviour
     {
         private void Start()
@@ -25,6 +30,9 @@ namespace SandBox
             // var parsedData = StreamingAssetsUtil.GetData(data);
             //
             // foreach (var kvp in parsedData) Debug.Log($"{kvp.Key}, {string.Join(',', kvp.Value)}");
+            
+            var a = new A();
+            a = (A)(new C() as object);
 
             var request = UnityWebRequest.Get(Application.streamingAssetsPath + "/SampleTest.txt");
             Debug.Log(request.url);

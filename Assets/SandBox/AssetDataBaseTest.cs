@@ -26,8 +26,10 @@ namespace SandBox
             Debug.Log(operation.isDone);
             Debug.Log(operation.webRequest.downloadHandler.text);
 
-            request.SendWebRequest();
+            //request.SendWebRequest();
             Func<UnityWebRequest, UnityWebRequestAsyncOperation> hoge = req => req.SendWebRequest();
+
+            hoge.Invoke(request);
         }
 
         private void Test()

@@ -106,7 +106,6 @@ namespace StreamingAssetsInjector.IlPostProcess
             {
                 var instruction = methodBody.Instructions[i];
 
-                Debug.Log($"置き換えるかも{instruction.Operand}");
                 if (instruction.OpCode != OpCodes.Callvirt) continue;
                 if (instruction.Operand.ToString() !=
                     "UnityEngine.Networking.UnityWebRequestAsyncOperation UnityEngine.Networking.UnityWebRequest::SendWebRequest()")
@@ -122,8 +121,6 @@ namespace StreamingAssetsInjector.IlPostProcess
                 ilProcessor.InsertAfter(instruction,
                     Instruction.Create(OpCodes.Call, getWebRequestAsyncOperationMethodReference));
                 ilProcessor.RemoveAt(i);
-
-                Debug.Log($"置き換えるたい{instruction}");
             }
         }
     }

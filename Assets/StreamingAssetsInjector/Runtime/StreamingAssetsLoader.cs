@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.InteropServices;
 using System.Text;
 using UnityEngine;
 using UnityEngine.Networking;
@@ -66,8 +65,5 @@ namespace StreamingAssetsInjector.Runtime
 
             return dic;
         }
-
-        [DllImport("__Internal")]
-        public static extern string LoadStreamingAssetsData();
     }
 }

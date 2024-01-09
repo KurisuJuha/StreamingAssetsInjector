@@ -1,4 +1,4 @@
-using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -30,24 +30,23 @@ namespace SandBox
             // var parsedData = StreamingAssetsUtil.GetData(data);
             //
             // foreach (var kvp in parsedData) Debug.Log($"{kvp.Key}, {string.Join(',', kvp.Value)}");
-            
-            var a = new A();
-            a = (A)(new C() as object);
+        }
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Space)) StartCoroutine(RequestCoroutine());
+        }
+
+        private IEnumerator RequestCoroutine()
+        {
             var request = UnityWebRequest.Get(Application.streamingAssetsPath + "/SampleTest.txt");
             Debug.Log(request.url);
             var operation = request.SendWebRequest();
-            while (!operation.isDone)
-            {
-            }
+
+            yield return operation;
 
             Debug.Log(operation.isDone);
             Debug.Log(operation.webRequest.downloadHandler.text);
-
-            //request.SendWebRequest();
-            Func<UnityWebRequest, UnityWebRequestAsyncOperation> hoge = req => req.SendWebRequest();
-
-            hoge.Invoke(request);
         }
 
         private void Test()

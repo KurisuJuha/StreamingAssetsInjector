@@ -20,7 +20,7 @@ namespace StreamingAssetsInjector.Editor
                 var buildPath = Path.Combine(outputPath, "Build");
                 var streamingAssetsPath = Path.Combine(outputPath, "StreamingAssets");
                 var loaderPath = Directory.GetFiles(buildPath, "*.loader.js").First();
-                var data = StreamingAssetsUtil.GetBase64(streamingAssetsPath);
+                var data = StreamingAssetsLoader.GetBase64(streamingAssetsPath);
                 File.AppendAllText(loaderPath, $"function GetStreamingAssetsData(){{return \"{data}\";}}");
             }
 

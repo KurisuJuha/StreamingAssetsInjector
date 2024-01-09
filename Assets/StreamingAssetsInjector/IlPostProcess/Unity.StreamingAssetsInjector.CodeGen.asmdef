@@ -1,7 +1,9 @@
 {
     "name": "Unity.StreamingAssetsInjector.CodeGen",
     "rootNamespace": "",
-    "references": [],
+    "references": [
+        "GUID:46575393b6f5b4e9aa8eba4133990f29"
+    ],
     "includePlatforms": [
         "Editor"
     ],

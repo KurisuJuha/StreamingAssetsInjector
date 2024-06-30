@@ -46,6 +46,7 @@ namespace SandBox
             yield return operation;
 
             Debug.Log(operation.isDone);
+            Debug.Log(operation.webRequest.downloadHandler.error);
             Debug.Log(operation.webRequest.downloadHandler.text);
         }
 

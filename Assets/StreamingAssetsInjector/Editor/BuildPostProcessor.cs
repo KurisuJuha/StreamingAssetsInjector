@@ -3,7 +3,6 @@ using System.Linq;
 using UnityEditor;
 using UnityEditor.Build;
 using UnityEditor.Build.Reporting;
-using UnityEngine;
 
 namespace StreamingAssetsInjector.Editor
 {
@@ -13,8 +12,6 @@ namespace StreamingAssetsInjector.Editor
 
         public void OnPreprocessBuild(BuildReport report)
         {
-            Debug.Log($"PreProcess {report.summary.platform} {report.summary.outputPath}");
-
             if (report.summary.platform == BuildTarget.WebGL)
             {
                 var outputPath = report.summary.outputPath;
@@ -45,28 +42,14 @@ namespace StreamingAssetsInjector.Editor
 
                 File.WriteAllText(loaderPath, rawText);
             }
-
-            Debug.Log($"PostProcess {report.summary.platform} {report.summary.outputPath}");
         }
 
         private static string GetStreamingAssetsTable(SerializedStreamingAsset[] assets)
         {
-            Debug.Log($@"const streamingAssetsTable = {{{
-                string.Join(
-                    ",",
-                    assets.Select(asset => {
-                        Debug.Log(asset.RelativePath);
-                        return $"\"{asset.RelativePath}\":\"\"";
-                    })
-                )
-            }}};");
             return $@"const streamingAssetsTable = {{{
                 string.Join(
                     ",",
-                    assets.Select(asset => {
-                        Debug.Log(asset.RelativePath);
-                        return $"\"{asset.RelativePath}\":\"{asset.Base64}\"";
-                    })
+                    assets.Select(asset => $"\"{asset.RelativePath}\":\"{asset.Base64}\"")
                 )
             }}};";
         }
@@ -74,8 +57,6 @@ namespace StreamingAssetsInjector.Editor
         private static string GetOverrideFetchCode()
         {
             return @"function OverrideFetch() {
-    console.log(""OverrideFetch called"");
-
     const originalFetch = window.fetch;
     window.fetch = function (url, options) {
         if (url.startsWith(window.location.origin + ""/StreamingAssets/"")) {

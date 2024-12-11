@@ -1,7 +1,6 @@
 using System;
 using System.IO;
 using System.Linq;
-using UnityEngine;
 
 namespace StreamingAssetsInjector.Editor
 {
@@ -26,7 +25,6 @@ namespace StreamingAssetsInjector.Editor
             var fileBytes = File.ReadAllBytes(filePath);
             var relativeFilePath = filePath.Remove(0, folderPath.Length + 1);
             relativeFilePath = relativeFilePath.Replace(@"\", "/");
-            Debug.Log($"{relativeFilePath}, {string.Join(',', fileBytes)}");
 
             return new SerializedStreamingAsset
             {

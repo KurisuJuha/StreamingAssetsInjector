@@ -78,12 +78,20 @@ namespace StreamingAssetsInjector.Editor
 
     const originalFetch = window.fetch;
     window.fetch = function (url, options) {
-        console.log(""OverridedFetch called"");
-
         if (url.startsWith(window.location.origin + ""/StreamingAssets/"")) {
             var relativeUrl = url.replace(window.location.origin, """").replace(""/StreamingAssets/"", """");
+
+            const binaryData = atob(streamingAssetsTable[relativeUrl]);
+            const arrayBuffer = new Uint8Array(binaryData.length);
+
+            for (let i = 0; i < binaryData.length; i++) {
+                arrayBuffer[i] = binaryData.charCodeAt(i);
+            }
+
+            const blob = new Blob([arrayBuffer]);
+
             return Promise.resolve(
-                new Response(streamingAssetsTable[relativeUrl], {
+                new Response(blob, {
                     status: 200,
                 })
             );

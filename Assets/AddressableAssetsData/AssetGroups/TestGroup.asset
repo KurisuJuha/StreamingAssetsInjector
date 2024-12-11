@@ -22,6 +22,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a00600f088fb2ca45aedb0d0f626143a
+    m_Address: Assets/SampleSquare.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 72c8c2b7ae3ed456c860f8a25b45f7a3, type: 2}
   m_SchemaSet:

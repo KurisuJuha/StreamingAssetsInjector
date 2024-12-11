@@ -17,13 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: b840831ac4fc94ff0b9530777ee62e03
   m_SerializeEntries:
-  - m_GUID: dda417008a2c945d49c0b8ddff558639
-    m_Address: Assets/SampleTest 1.txt
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: a00600f088fb2ca45aedb0d0f626143a
-    m_Address: Assets/SampleSquare.png
+  - m_GUID: 7089c73d7f68eb54790b7c994f707f6b
+    m_Address: Assets/Circle.png
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

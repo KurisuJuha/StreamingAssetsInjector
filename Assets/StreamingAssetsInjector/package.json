@@ -1,0 +1,9 @@
+﻿{
+    "name": "jp.juha.streaming-assets-injector",
+    "version": "1.0.0",
+    "displayName": "StreamingAssetsInjector",
+    "description": "Injects StreamingAssets into the build.",
+    "author": {
+        "name": "Juha"
+    }
+}

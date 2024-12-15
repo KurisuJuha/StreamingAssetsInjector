@@ -2,7 +2,12 @@
 
 [![license](https://img.shields.io/badge/LICENSE-MIT-green.svg)](LICENSE)
 
-WebGLBuild で StreamingAssets フォルダをアップロードできない環境でもサーバーなどを利用せず StreamingAssets を読み込むことが可能になります
+WebGL ビルドで StreamingAssets フォルダをアップロードできない環境でも、サーバー不要で StreamingAssets を読み込めます
+
+## Features
+
+-   Addressables、Localization など StreamingAssets を利用するほとんどのライブラリを利用することができます
+-   インストールするだけで動作します
 
 ## Installation
 

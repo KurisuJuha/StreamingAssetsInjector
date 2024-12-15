@@ -1,6 +1,8 @@
 # StreamingAssetsInjector
 
-WebGLBuild で StreamingAssets フォルダがアップロードできない環境でも StreamingAssets の読み込みを可能にします
+[![license](https://img.shields.io/badge/LICENSE-MIT-green.svg)](LICENSE)
+
+WebGLBuild で StreamingAssets フォルダがアップロードできない環境でもサーバーなどを使用しない StreamingAssets の読み込みを可能にします
 
 ## Installation
 
@@ -27,3 +29,11 @@ https://github.com/KurisuJuha/StreamingAssetsInjector.git?path=Assets/StreamingA
 > StreamingAssets 上の全てのデータがメモリ上に展開されます
 > パフォーマンス目的で StreamingAssets を利用しようとしている場合は悪化する可能性があります
 > Addressables や Localization の機能自体の利用を目的としている場合のみ使用してください
+
+## Sample
+
+[Sample](https://unityroom.com/games/streamingassetsimportertest)
+
+## License
+
+[LICENSE](https://github.com/KurisuJuha/StreamingAssetsInjector/blob/main/LICENSE)

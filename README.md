@@ -4,6 +4,10 @@
 
 WebGL ビルドで StreamingAssets フォルダをアップロードできない環境でも、サーバー不要で StreamingAssets を読み込めます
 
+> [!NOTE]
+> StreamingAssetsInjectorより多少手順が煩雑になりますが、Akeit0さんの[EmbeddedStreamingAssets](https://github.com/Akeit0/EmbeddedStreamingAssets)の方がパフォーマンス面で優れています。
+> とくに理由がない場合はそちらを使う方が良いと思います。
+
 ## Features
 
 -   Addressables、Localization など StreamingAssets を利用するほとんどのライブラリを利用することができます
